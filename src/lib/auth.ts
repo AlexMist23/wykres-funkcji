@@ -28,17 +28,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       }
       return session;
     },
-    authorized: async ({ auth, request }) => {
-      if (!auth?.user) return false;
-
-      const path = request.nextUrl.pathname;
-
-      if (path.startsWith("/admin")) {
-        return auth.user.role === "admin";
-      }
-
-      return true;
-    },
   },
 });
 
