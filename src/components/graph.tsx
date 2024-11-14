@@ -58,7 +58,7 @@ const CustomDot = ({
 }: {
   cx?: number;
   cy?: number;
-  payload?: any;
+  payload?: { included: boolean };
   color: string;
 }) => {
   if (!cx || !cy || !payload) return null;
